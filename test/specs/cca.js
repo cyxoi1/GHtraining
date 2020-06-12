@@ -5,6 +5,8 @@ const subheaderName = '//h3[@class="total-count"]';
 const defaultCounterName = '//div[@class]/h3';
 const countValue = 'span.badge';
 const editCounterTitle = '//div/label[text()="Edit Counter Title: "]';
+const llf = "//button[@name='negative']";
+const llfValue = "//input[@name='lower']";
 
 
 describe('Before each', ()=> {
@@ -41,9 +43,41 @@ describe('Default Counter', () => {
 
     it('should check if Edit Counter Title is present ',  () => {
         const text = $(editCounterTitle).getText();
-        expect(text).toEqual('Edit Counter Title');
+        expect(text).toEqual('Edit Counter Title:');
     });
 
+    it('should check llf is clickable',  () => {
+        const result = $(llf).isClickable();
+        expect(result).toEqual(true);
+    });
+
+    it('should 1 is present',  () => {
+        $(llf).click();
+        browser.waitUntil(() => $(llf).isDisplayed() === true);
+        const text = $(llfValue).getValue();
+        expect(text).toEqual('1');
+    });
+
+    it('should check that spinner increase value +1',  () => {
+        $(llfValue).click();
+        browser.keys('ArrowUp');
+        const text = $(llfValue).getValue();
+        expect(text).toEqual('2');
+    });
+
+    it('should check that spinner increase value -1',  () => {
+        browser.keys('ArrowDown');
+        const text = $(llfValue).getValue();
+        expect(text).toEqual('1');
+    });
 });
+
+// describe('', () => {
+//     it('should ',  () => {
+//
+//     });
+// })
+
+
 
 
