@@ -1,17 +1,17 @@
 // describe('Test Progress Monitor', () => {
-//     it('should have the rigth title', () => {
-//         browser.url('https://app.pasv.us');
-//         const actualTitle = browser.getTitle();
-//         const expectedTitle = 'Progress Monitor';
-//         expect(actualTitle).toEqual(expectedTitle);
-//     });
+//     // it('should have the right title', () => {
+//     //     browser.url('https://app.pasv.us');
+//     //     const actualTitle = browser.getTitle();
+//     //     const expectedTitle = 'Progress Monitor';
+//     //     expect(actualTitle).toEqual(expectedTitle);
+//     // });
 //
-//     it('should go to Login page', () => {
-//         const loginButton = $('//a[@qa="login-link"]');
-//         const text = loginButton.getText();
-//         const expected = 'Login';
-//         expect(text).toEqual(expected);
-//     });
+//     // it('should go to Login page', () => {
+//     //     const loginButton = $('//a[@qa="login-link"]');
+//     //     const text = loginButton.getText();
+//     //     const expected = 'Login';
+//     //     expect(text).toEqual(expected);
+//     // });
 //
 //     it('should verify that Login is clickable and go to Login page', () => {
 //         browser.url('https://app.pasv.us');
