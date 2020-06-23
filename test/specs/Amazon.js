@@ -74,7 +74,7 @@ describe.skip('Registration Page', () => {
     });
 });
 
-describe('Create a New Account', () => {
+describe.skip('Create a New Account', () => {
     before(() => {
         browser.maximizeWindow();
         browser.deleteAllCookies();
@@ -109,6 +109,21 @@ describe('Create a New Account', () => {
         const inputPassword = $("//input[@id='ap_password']");
         inputPassword.setValue('111111');
     });
-
-
 });
+
+describe('training with the drop down menu', () => {
+    before(() => {
+        browser.maximizeWindow();
+        browser.deleteAllCookies();
+        browser.url('https://www.amazon.com/?tag=hydrusmsnabk-20&hvadid=78134170667118&hvqmt=e&hvbmt=be&hvdev=c&ref=pd_sl_2fpp76mlz7_e');
+    });
+
+    it('should open Account and List and navigate to Your Garage', function () {
+        const accountAndList = $("//a[@id='nav-link-accountList']").moveTo();
+        const buttonYourGarage = $('//span[text()="Your Garage"]').click();
+        browser.pause(2000);
+        const titleYourGarage = $('//h1').getText();
+        expect(titleYourGarage).toEqual('Your Garage');
+        browser.pause(2000);
+    });
+})
