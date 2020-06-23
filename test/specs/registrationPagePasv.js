@@ -37,6 +37,21 @@ describe('', () =>{
         expect(text).eq('Avdeeva');
     });
 
+    it('should fill out phone field', function () {
+        const inputPhone = $('//input[@name="phone"]');
+        inputPhone.setValue('13456667777');
+        const text = inputPhone.getValue();
+        expect(text).eq('13456667777');
+    });
+
+    it('should verify that phone input is valid', function () {
+        const inputPhone = $('//input[@name="phone"]');
+        browser.keys('Tab');
+        browser.pause(5000);
+        const result = inputPhone.getAttribute('class').includes('is-valid');
+        expect(result).eq(true);
+    });
+
     it('should fill out the field with email', function () {
         const inputLastName = $('//input[@name="email"]');
         inputLastName.setValue('katavdeeva@gmail.com');
