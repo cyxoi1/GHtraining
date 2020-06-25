@@ -1,7 +1,6 @@
 const {expect} = require('chai');
 import login from "../loginUSPS";
 
-
 describe('CREATE ACCOUNT', () => {
     before(() => {
         login();
@@ -41,7 +40,7 @@ describe('CREATE ACCOUNT', () => {
     });
 
     it('should verify that first question is selected', function () {
-        const firstQ =  $("#01");
+        const firstQ = $("#01");
         firstQ.scrollIntoView();
         const result = firstQ.isSelected();
         expect(result).true;
@@ -57,12 +56,11 @@ describe('CREATE ACCOUNT', () => {
     it('should choose the second question', function () {
         const firstQ = $("#ssec2");
         firstQ.selectByVisibleText('What is your favorite movie?');
-        browser.pause(3000);
+        browser.pause(300);
     });
 
     it('should verify that the second question is selected', function () {
-        const secondQ =  $("#ssec2");
-        secondQ.scrollIntoView();
+        const secondQ = $("#s3o5");
         const result = secondQ.isSelected();
         expect(result).true;
         browser.pause(200);
@@ -70,11 +68,9 @@ describe('CREATE ACCOUNT', () => {
 
     it('should fill the input of the second question', function () {
         const inputAnswer = $("#tsecAnswer2");
-        inputAnswer.setValue('Terminator');
-        browser.pause(3000);
+        inputAnswer.setValue('The Terminator');
+        browser.pause(300);
     });
-
-
 
 
 })
