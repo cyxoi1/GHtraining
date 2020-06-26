@@ -31,9 +31,16 @@ describe('CREATE DAY REPORT', () => {
         expect(element.isSelected()).true
     });
 
-//space added for GH testing purposes
-
 });
 
 
+
+});
+//Mariia's changes
+
+
+
+
+
+//commit
 
