@@ -31,14 +31,8 @@ describe('CREATE DAY REPORT', () => {
         expect(element.isSelected()).true
     });
 
-    // work with GitHub
-
-    it('1', function () {
-        const element = $("//input[@id='input-1']");
-        expect(element.isSelected()).true
-    });
-
 });
+//Mariia's changes
 
 
-
+//commit
